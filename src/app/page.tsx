@@ -63,7 +63,7 @@ export default function Home() {
           </form>
         </CardContent>
         <CardFooter className="text-center">
-          <p className="text-sm text-gray-600 dark:text-gray-400">
+          <p className="text-md text-gray-600 dark:text-gray-400">
             Already have an account?{" "}
             <Link href="/login" className="text-indigo-600 hover:underline dark:text-indigo-400">
               Login

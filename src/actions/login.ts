@@ -1,6 +1,6 @@
 "use server";
-import { signIn } from "@/auth";
 
+import { signIn } from "@/auth";
 export const loginHandler = async (email: string, password: string): Promise<string | void> => {
     if (!email || !password) {
         throw new Error("Both email and password are required.");
@@ -16,7 +16,7 @@ export const loginHandler = async (email: string, password: string): Promise<str
         if (!response) {
             throw new Error("Sign-in failed. Please try again.");
         }
-
+        
     } catch (error) {
         if (error instanceof Error) {
             return error.message;
