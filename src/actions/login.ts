@@ -5,14 +5,12 @@ export const loginHandler = async (email: string, password: string): Promise<str
     if (!email || !password) {
         throw new Error("Both email and password are required.");
     }
-
     try {
         const response = await signIn("credentials", {
             email,
             password,
             redirect: false,
         });
-
         if (!response) {
             throw new Error("Sign-in failed. Please try again.");
         }

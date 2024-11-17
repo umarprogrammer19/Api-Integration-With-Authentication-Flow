@@ -11,7 +11,6 @@ export const connectToDatabase = async () => {
     if (mongoose.connections && mongoose.connections[0].readyState) return;
     const { connection } = await mongoose.connect(process.env.MONGODB_URI as string, {
       dbName: "nextAuth",
-      authSource: "admin",
     });
     console.log(`Connected To Database ${connection.host}`);
 
