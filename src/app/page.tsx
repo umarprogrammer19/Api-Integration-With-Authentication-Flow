@@ -3,15 +3,12 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Introduction from "@/components/Introduction";
 import ProjectCard from "@/components/ProjectCard";
-import { decode } from "next-auth/jwt";
-import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
+
 export default async function Home() {
-  const cokess = cookies().get("authjs.session-token");
-  console.log(await decode({
-    token: cokess?.value,
-    salt: cokess?.name!,
-    secret: process.env.AUTH_SECRET!,
-  }))
+  const session = await auth();
+  if (!session?.user) redirect("/login");
+
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900">
       <Header />
