@@ -10,14 +10,15 @@ export default async function Home() {
   if (!session?.user) redirect("/login");
 
   return (
-    <div className="min-h-screen bg-gray-50 text-gray-900">
+    <div className="min-h-screen bg-gradient-to-b from-purple-500 to-indigo-500 text-gray-900">
+      {/* Header */}
       <Header />
 
       {/* Introduction Section */}
       <Introduction />
 
       {/* Projects Section */}
-      <section className="py-12 bg-gray-100">
+      <section className="py-12">
         <div className="max-w-screen-xl mx-auto px-4 grid md:grid-cols-2 gap-8">
           {/* Weather Forecast (SSR) Project Card */}
           <ProjectCard
@@ -35,6 +36,7 @@ export default async function Home() {
         </div>
       </section>
 
+      {/* Footer */}
       <Footer />
     </div>
   );

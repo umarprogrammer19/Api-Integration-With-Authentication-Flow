@@ -3,7 +3,7 @@
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { signUpHandler } from "@/actions/signUp";
+import { signUpHandler } from "@/actions/signup";
 import { useRouter } from "next/navigation";
 
 export default function SignUpForm() {
