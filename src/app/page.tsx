@@ -12,7 +12,7 @@ export default async function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-purple-500 to-indigo-500 text-gray-900">
       {/* Header */}
-      <Header />
+      <Header title="SSR & SSG Projects"/>
 
       {/* Introduction Section */}
       <Introduction />
@@ -24,7 +24,7 @@ export default async function Home() {
           <ProjectCard
             title="Weather Forecast (SSR)"
             description="Get real-time weather data using Server-Side Rendering. The page is dynamically rendered with live data based on location."
-            link="/weather-forecast-ssr"
+            link="/weather"
           />
 
           {/* GitHub Profile Viewer (SSG) Project Card */}

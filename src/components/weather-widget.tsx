@@ -11,6 +11,8 @@ import { Button } from "@/components/ui/button";
 import { CloudIcon, MapPinIcon, ThermometerIcon } from "lucide-react";
 import React, { ChangeEvent, FormEvent, useState } from "react";
 import LoadingSpinner from "./loadingSpinner";
+import Header from "./Header";
+import Footer from "./Footer";
 
 interface WeatherData {
     temperature: number;
@@ -112,7 +114,8 @@ export default function WeatherWidget() {
     }
 
     return (
-        <div className="flex justify-center items-center h-screen bg-gradient-to-b from-purple-500 to-indigo-500">
+        <div className="flex flex-col justify-center items-center h-screen bg-gradient-to-b from-purple-500 to-indigo-500">
+            <Header title="Weather Widget" customClass="fixed top-0 w-[100vw]"/>
             <Card className="w-full max-w-md mx-auto bg-white rounded-xl shadow-lg text-gray-900">
                 <CardHeader className="border-b border-gray-200">
                     <CardTitle className="text-2xl font-bold text-indigo-600">
@@ -161,6 +164,7 @@ export default function WeatherWidget() {
                     )}
                 </CardContent>
             </Card>
+            <Footer customClass="fixed bottom-5"/>
         </div>
     );
 }

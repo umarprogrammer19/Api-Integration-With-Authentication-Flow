@@ -14,9 +14,9 @@ const ProjectCard = ({ title, description, link }: ProjectCardProps) => {
                 <p className="text-zinc-900 mb-4">{description}</p>
                 <Link
                     href={link}
-                    className="text-white bg-indigo-900 hover:bg-indigo-600 py-2 px-4 rounded-lg inline-block transition font-bold"
+                    className="text-white bg-indigo-900 hover:bg-indigo-600 py-2 px-5 rounded-lg inline-block transition font-bold"
                 >
-                    View Project
+                    View
                 </Link>
             </div>
         </div>
