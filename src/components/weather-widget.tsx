@@ -29,7 +29,7 @@ export default function WeatherWidget() {
         event.preventDefault();
         const trimmedLocation = location.trim();
         if (trimmedLocation === "") {
-            setError("Please Enter a Valid Location");
+            setError("Please enter a valid location.");
             setWeather(null);
             return;
         }
@@ -40,7 +40,7 @@ export default function WeatherWidget() {
                 `https://api.weatherapi.com/v1/current.json?key=${process.env.NEXT_PUBLIC_WEATHER_API_KEY}&q=${trimmedLocation}`
             );
             if (!response.ok) {
-                throw new Error("City Not Found");
+                throw new Error("City not found.");
             }
             const data = await response.json();
             const weatherData: WeatherData = {
@@ -112,23 +112,21 @@ export default function WeatherWidget() {
     }
 
     return (
-        <div className="flex justify-center items-center h-screen bg-gradient-to-r from-gray-800 via-gray-900 to-black">
-            {/* Center the card within the screen */}
-            <Card className="w-full max-w-sm sm:max-w-md mx-auto text-center bg-gray-900 text-white shadow-lg rounded-lg">
-                {/* Card header with title and description */}
-                <CardHeader className="border-b border-gray-700">
-                    <CardTitle className="text-2xl font-bold text-cyan-400">Weather Widget</CardTitle>
-                    <CardDescription className="text-gray-400">
+        <div className="flex justify-center items-center h-screen bg-gradient-to-b from-purple-500 to-indigo-500">
+            <Card className="w-full max-w-md mx-auto bg-white rounded-xl shadow-lg text-gray-900">
+                <CardHeader className="border-b border-gray-200">
+                    <CardTitle className="text-2xl font-bold text-indigo-600">
+                        Weather Widget
+                    </CardTitle>
+                    <CardDescription className="text-gray-600">
                         Search for the current weather conditions in your city.
                     </CardDescription>
                 </CardHeader>
-                {/* Card content including the search form and weather display */}
                 <CardContent>
-                    {/* Form to input and submit the location */}
-                    <form onSubmit={handleSearch} className="flex items-center gap-2 mt-4">
+                    <form onSubmit={handleSearch} className="flex items-center gap-3 mt-4">
                         <Input
                             type="text"
-                            className="bg-gray-800 text-gray-200 placeholder-gray-500 border border-gray-700 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:outline-none"
+                            className="bg-gray-100 text-gray-800 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-400 focus:outline-none"
                             placeholder="Enter a city name"
                             value={location}
                             disabled={isLoading}
@@ -138,30 +136,25 @@ export default function WeatherWidget() {
                         />
                         <Button
                             type="submit"
-                            className="bg-cyan-500 hover:bg-cyan-600 text-white font-semibold rounded-lg px-4 py-2 transition-all"
+                            className="bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-4 rounded-lg transition-all ms-2"
                             disabled={isLoading}
                         >
                             {isLoading ? <LoadingSpinner /> : "Search"}
                         </Button>
                     </form>
-                    {/* Display error message if any */}
                     {error && <div className="mt-4 text-red-500">{error}</div>}
-                    {/* Display weather data if available */}
                     {weather && (
-                        <div className="mt-4 grid gap-2">
-                            {/* Display temperature message with icon */}
+                        <div className="mt-4 space-y-3">
                             <div className="flex items-center gap-2">
-                                <ThermometerIcon className="w-6 h-6 text-cyan-400" />
+                                <ThermometerIcon className="w-6 h-6 text-indigo-600" />
                                 {getTemperatureMessage(weather.temperature, weather.unit)}
                             </div>
-                            {/* Display weather description message with icon */}
                             <div className="flex items-center gap-2">
-                                <CloudIcon className="w-6 h-6 text-cyan-400" />
+                                <CloudIcon className="w-6 h-6 text-indigo-600" />
                                 <div>{getWeatherMessage(weather.description)}</div>
                             </div>
-                            {/* Display location message with icon */}
                             <div className="flex items-center gap-2">
-                                <MapPinIcon className="w-6 h-6 text-cyan-400" />
+                                <MapPinIcon className="w-6 h-6 text-indigo-600" />
                                 <div>{getLocationMessage(weather.location)}</div>
                             </div>
                         </div>
