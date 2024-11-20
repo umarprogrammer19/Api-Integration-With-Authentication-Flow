@@ -1,7 +1,6 @@
-// import SignUpForm from "@/components/client/SIgnUpForm";
-import SignUpForm from "@/components/client/SIgnUpForm";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import Link from "next/link";
+import SignUpForm from "../../../components/client/SignUpForm";
 
 export default function SignUpPage() {
     return (
