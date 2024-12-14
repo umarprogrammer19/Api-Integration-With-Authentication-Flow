@@ -1,4 +1,5 @@
 "use server";
+
 import { auth } from "@/auth";
 import LoginForm from "@/components/client/LoginForm";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
@@ -7,7 +8,10 @@ import { redirect } from "next/navigation";
 
 export default async function Login() {
     const session = await auth();
-    if (session?.user) redirect("/");
+
+    if (session?.user) {
+        redirect("/");
+    }
 
     return (
         <div className="flex justify-center items-center h-screen bg-gradient-to-b from-purple-500 to-indigo-500 p-4">

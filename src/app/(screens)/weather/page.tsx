@@ -1,4 +1,3 @@
-"use server";
 import { auth } from "@/auth";
 import WeatherWidget from "@/components/weather-widget";
 import { redirect } from "next/navigation";
