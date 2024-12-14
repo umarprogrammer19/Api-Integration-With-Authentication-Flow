@@ -1,8 +1,9 @@
+"use server";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import Link from "next/link";
 import SignUpForm from "../../../components/client/SignUpForm";
 
-export default function SignUpPage() {
+export default async function SignUpPage() {
     return (
         <div className="flex justify-center items-center h-screen bg-gradient-to-b from-purple-500 to-indigo-500 p-4">
             <Card className="w-full max-w-md bg-white rounded-xl shadow-lg">

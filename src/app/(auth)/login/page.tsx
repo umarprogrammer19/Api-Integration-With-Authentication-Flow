@@ -1,3 +1,4 @@
+"use server";
 import { auth } from "@/auth";
 import LoginForm from "@/components/client/LoginForm";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
