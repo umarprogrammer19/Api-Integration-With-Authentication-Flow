@@ -29,8 +29,8 @@ export default async function Home() {
 
           {/* GitHub Profile Viewer (SSG) Project Card */}
           <ProjectCard
-            title="GitHub Profile Viewer (SSG)"
-            description="View GitHub profiles and repositories with Static Site Generation. Data is fetched at build time for fast page loads and SEO optimization."
+            title="Product Listing (SSG)"
+            description="View Products with Static Site Generation.Dynamic Product Data is fetched at build time for fast page loads and SEO optimization."
             link="/github-profile-viewer-ssg"
           />
         </div>
